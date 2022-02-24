@@ -1,5 +1,5 @@
 # Create a file and write system information to it
-from platform import platform
+import platform
 
 
 def create_file(filename):
