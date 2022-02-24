@@ -6,13 +6,4 @@ services:
       context: .
       dockerfile: Dockerfile
     volumes:
-      - build_volume:/opt/build
-
-
-volumes:
-  build_volume:
-    driver: local
-    driver_opts:
-      type: none
-      o: bind
-      device: ~/build_volume
+      - ${HOME}/build/test_build:/opt/build
