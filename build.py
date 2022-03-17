@@ -8,7 +8,7 @@ def create_dir(dirname):
 
 
 def create_file(dirname, filename):
-    with with open(os.path.join(dirname, filename), 'w') as f:
+    with open(os.path.join(dirname, filename), 'w') as f:
         f.write("System information\n")
         f.write("===================\n")
         f.write("\n")
