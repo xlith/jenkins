@@ -1,6 +1,7 @@
 # Create a file and write system information to it
 import platform
 import datetime
+import os
 
 def version():
     ct = datetime.datetime.now()
@@ -8,8 +9,13 @@ def version():
         v.write(ct)
         v.write("\n")
 
-def create_file(filename):
-    with open(filename, 'w') as f:
+def create_dir(dirname):
+    if not os.path.exists(dirname):
+        os.makedirs(dirname)
+
+
+def create_file(dirname, filename):
+    with open(os.path.join(dirname, filename), 'w') as f:
         f.write("System information\n")
         f.write("===================\n")
         f.write("\n")
@@ -47,4 +53,5 @@ def create_file(filename):
         f.write("\n")
 
 version()
-create_file("build_info.txt")
+create_dir("build")
+create_file("build", "build_info.txt")
