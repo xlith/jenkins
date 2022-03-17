@@ -1,9 +1,14 @@
 # Create a file and write system information to it
 import platform
+import os
+
+def create_dir(dirname):
+    if not os.path.exists(dirname):
+        os.makedirs(dirname)
 
 
-def create_file(filename):
-    with open(filename, 'w') as f:
+def create_file(dirname, filename):
+    with with open(os.path.join(dirname, filename), 'w') as f:
         f.write("System information\n")
         f.write("===================\n")
         f.write("\n")
@@ -41,4 +46,5 @@ def create_file(filename):
         f.write("\n")
 
 
-create_file("build_info.txt")
+create_dir("build")
+create_file("build", "build_info.txt")
