@@ -1,6 +1,12 @@
 # Create a file and write system information to it
 import platform
+import datetime
 
+def version():
+    ct = datetime.datetime.now()
+    with open("version.txt", "w") as v:
+        v.write(ct)
+        v.write("\n")
 
 def create_file(filename):
     with open(filename, 'w') as f:
@@ -40,5 +46,5 @@ def create_file(filename):
         f.write("Version: " + platform.version() + "\n")
         f.write("\n")
 
-
+version()
 create_file("build_info.txt")
