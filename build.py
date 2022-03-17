@@ -6,7 +6,7 @@ import os
 def version():
     ct = datetime.datetime.now()
     with open("version.txt", "w") as v:
-        v.write(ct)
+        v.write(str(ct))
         v.write("\n")
 
 def create_dir(dirname):
